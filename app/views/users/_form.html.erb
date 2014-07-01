@@ -1,0 +1,29 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_exdivlanation">
+      <h2><% @pty= pluralize(@user.errors.count, "error") %> </h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |per| %>
+        <div><% @mes = per %></div>
+      <% end %>
+
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-4">
+    <h1><%= @titulo %></h1>
+    <%= f.label :email %>
+    <%= f.text_field :email,:placeholder => "email" %>
+        
+    <%= f.label :password %>
+    <%= f.password_field :password,:placeholder => "contraseña" %>
+    
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation,:placeholder => "Repita contraseña" %>
+   
+    <%= f.submit "Registrar" %>
+  
+  </div>
+  
+<% end %>

@@ -1,0 +1,43 @@
+<h1>Listing encuesta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th>Tipo vivienda</th>
+      <th>Estrato</th>
+      <th>Servicios</th>
+      <th>Tipo servicios</th>
+      <th>Habitaciones</th>
+      <th>Piso vivienda</th>
+      <th>Paredes vivienda</th>
+      <th>Basuras</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @encuesta.each do |encuestum| %>
+      <tr>
+        <td><%= encuestum.direccion %></td>
+        <td><%= encuestum.telefono %></td>
+        <td><%= encuestum.tipo_vivienda %></td>
+        <td><%= encuestum.estrato %></td>
+        <td><%= encuestum.servicios %></td>
+        <td><%= encuestum.tipo_servicios %></td>
+        <td><%= encuestum.habitaciones %></td>
+        <td><%= encuestum.piso_vivienda %></td>
+        <td><%= encuestum.paredes_vivienda %></td>
+        <td><%= encuestum.basuras %></td>
+        <td><%= link_to 'Show', encuestum %></td>
+        <td><%= link_to 'Edit', edit_encuestum_path(encuestum) %></td>
+        <td><%= link_to 'Destroy', encuestum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Encuestum', new_encuestum_path %>
